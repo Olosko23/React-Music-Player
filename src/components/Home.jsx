@@ -86,7 +86,7 @@ const Home = () => {
     },
   ];
   return (
-    <div className="py-4">
+    <div className="pb-4">
       <Hero />
       <div className="px-12 mb-14">
         <div className="py-5 grid place-items-center">
