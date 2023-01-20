@@ -1,5 +1,6 @@
 import React from "react";
-import web2 from '../assets/huncho.webp';
+import web2 from "../assets/huncho.webp";
+import Hero from "./Hero";
 
 const Home = () => {
   const tracks = [
@@ -85,42 +86,54 @@ const Home = () => {
     },
   ];
   return (
-    <div className="py-4 px-12 mb-14">
-      <div className="py-5 grid place-items-center">
-        <div className="font-semibold text-2xl py-2">CATEGORY</div>
-        <div className="flex gap-4">
-          <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">All</button>
-          <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">R&B</button>
-          <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">Hip Hop</button>
-          <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">Classics</button>
+    <div className="py-4">
+      <Hero />
+      <div className="px-12 mb-14">
+        <div className="py-5 grid place-items-center">
+          <div className="font-semibold text-2xl py-2">CATEGORY</div>
+          <div className="flex gap-4">
+            <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">
+              All
+            </button>
+            <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">
+              R&B
+            </button>
+            <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">
+              Hip Hop
+            </button>
+            <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">
+              Classics
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
-
-        {tracks.map(({ id, title, src, artist, album, year }) => {
-          return (
-            <div key={id} className="px-2 py-2 gap-6 shadow-xl rounded-xl ">
-              <h2 className="grid place-items-center font-bold">{title}</h2>
-              <img
-                className="grid place-items-center rounded-md"
-                src={src}
-                alt="song"
-              />
-              <p className="grid place-items-center font-semibold">{artist}</p>
-              <p className="grid place-items-center font-semibold">
-                Album: {album} {year}
-              </p>
-              <div className="flex justify-center gap-2">
-                <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">
-                  Play Now
-                </button>
-                <button className="px-4 py-2 rounded-lg bg-[#9EA1D4] cursor-pointer hover:scale-105">
-                  Add to Playlist
-                </button>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
+          {tracks.map(({ id, title, src, artist, album, year }) => {
+            return (
+              <div key={id} className="px-2 py-2 gap-6 shadow-xl rounded-xl ">
+                <h2 className="grid place-items-center font-bold">{title}</h2>
+                <img
+                  className="grid place-items-center rounded-md"
+                  src={src}
+                  alt="song"
+                />
+                <p className="grid place-items-center font-semibold">
+                  {artist}
+                </p>
+                <p className="grid place-items-center font-semibold">
+                  Album: {album} {year}
+                </p>
+                <div className="flex justify-center gap-2">
+                  <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">
+                    Play Now
+                  </button>
+                  <button className="px-4 py-2 rounded-lg bg-[#9EA1D4] cursor-pointer hover:scale-105">
+                    Add to Playlist
+                  </button>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
