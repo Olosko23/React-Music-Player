@@ -120,7 +120,7 @@ const Home = () => {
                   {artist}
                 </p>
                 <p className="grid place-items-center font-semibold">
-                  Album: {album} {year}
+                  Album: {album} <span className="text-gray-600"> {year}</span>
                 </p>
                 <div className="flex justify-center gap-2">
                   <button className="px-4 py-2 rounded-lg bg-[#FD8A8A] cursor-pointer hover:scale-105">
